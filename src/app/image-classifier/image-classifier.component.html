@@ -1,0 +1,13 @@
+<div>
+    <h1>Choose an Image to Identify</h1>
+    <div class="img-file btn btn-primary btn-file">
+        Browse...<input type="file" class="img-input btn" (change)="fileChange($event)">
+    </div>
+    <div class="img">
+        <img [src]="imageSrc" id="img" #img *ngIf="imageSrc"/>
+    </div>
+    <div class="prediction" *ngIf="predictionShow">
+        Approximately {{prediction.probability | percent}} certain this is a  
+        {{prediction.className | titlecase}}
+    </div>
+</div>
